@@ -104,7 +104,7 @@ spec:
 
           # Normal values
           orgName: ${{ parameters.orgName }}
-          repoName: ${{ parameters.repoName }}-gitops
+          repoName: ${{ parameters.repoName }}
           owner: ${{ parameters.owner }}
           system: ${{ parameters.system }}
           applicationType: gitops
