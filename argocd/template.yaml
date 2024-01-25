@@ -141,7 +141,7 @@ spec:
       input:
         allowedHosts: ['github.com']
         description: Contains the ArgoCD manifests for ${{ parameters.repoName }}
-        repoUrl: github.com?owner=${{ parameters.orgName }}&repo=${{ parameters.repoName }}-gitops
+        repoUrl: https://github.com/BlackMamba97s/argocd-app.git
         defaultBranch: main
 
     - id: register
