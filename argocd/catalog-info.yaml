@@ -1,0 +1,25 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: argocd
+  description: ArgoCD Component
+  tags:
+    - argocd
+spec:
+  type: service
+  lifecycle: experimental
+  owner: team@example.com
+  providesApis:
+    - id: argocd
+      schema:
+        type: object
+        properties:
+          repositoryUrl:
+            type: string
+            title: Repository URL
+            description: URL of the ArgoCD repository
+          clusterUrl:
+            type: string
+            title: Cluster URL
+            description: URL of the ArgoCD cluster
+  apiVersion: backstage.io/v1alpha1
