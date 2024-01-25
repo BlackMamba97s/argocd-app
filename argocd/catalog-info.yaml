@@ -10,7 +10,7 @@ spec:
   lifecycle: experimental
   owner: team@example.com
   providesApis:
-    - id: argocd
+    - id: 'argocd'
       schema:
         type: object
         properties:
