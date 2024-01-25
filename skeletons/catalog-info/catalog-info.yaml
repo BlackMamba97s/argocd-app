@@ -1,55 +1,23 @@
-{%- if values.componentName %}
-  {%- set name = values.componentName %}
-{%- else %}
-  {%- set name = values.repoName %}
-{% endif -%}
-
 apiVersion: backstage.io/v1alpha1
-{%- if values.entityKind %}
-kind: ${{ values.entityKind }}
-{%- else %}
 kind: Component
-{%- endif %}
 metadata:
-  name: ${{ name }}
-  {%- if values.title %}
-  title: ${{ values.title }}
-  {%- endif %}
-  {%- if values.description %}
-  description: ${{ values.description }}
-  {%- endif %}
+  name: backstage
+  description: |
+    Backstage is an open-source developer portal that puts the developer experience first.
+  links:
+    - title: Website
+      url: http://backstage.io
+    - title: Documentation
+      url: https://backstage.io/docs
+    - title: Storybook
+      url: https://backstage.io/storybook
+    - title: Discord Chat
+      url: https://discord.com/invite/EBHEGzX
   annotations:
-    {%- if values.hostUrl %}
-    argocd/app-name: ${{ name }}
-    {%- endif %}
-    {%- if values.ci == "../../../skeletons/tekton/" %}
-    tektonci/build-namespace: ${{ values.namespace }}
-    {%- endif %}
-    backstage.io/kubernetes-id: ${{ name }}
+    github.com/project-slug: backstage/backstage
     backstage.io/techdocs-ref: dir:.
-    {%- if values.sourceControl == "gitlab.com" %}
-    gitlab.com/project-slug: ${{ values.orgName }}/${{ values.repoName }}
-    {%- elif values.sourceControl == "github.com" %}
-    github.com/project-slug: ${{ values.orgName }}/${{ values.repoName }}
-    {%- elif values.sourceControl == "dev.azure.com" %}
-    dev.azure.com/project-repo: ${{ values.orgName }}/${{ values.repoName }}
-    {%- endif %}
+    lighthouse.com/website-url: https://backstage.io
 spec:
-  type: ${{ values.applicationType }}
-  {%- if values.system %}
-  system: ${{ values.system }}
-  {%- endif %}
-  {%- if values.lifecycle %}
-  lifecycle: ${{ values.lifecycle }}
-  {%- else %}
-  lifecycle: production
-  {%- endif %}
-  owner: ${{ values.owner }}
-  {%- if values.dependsOn %}
-  dependsOn:
-    - ${{ values.dependsOn }}
-  {%- endif %}
-  {%- if values.partOf %}
-  partOf:
-    - ${{ values.partOf }}
-  {%- endif %}
+  type: library
+  owner: CNCF
+  lifecycle: experimental
