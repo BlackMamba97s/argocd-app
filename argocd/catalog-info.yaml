@@ -9,7 +9,7 @@ metadata:
     - argocd
     - demo
   links:
-    - url: "https://argocd.liquid-reply.net/"
+    - url: https://argocd.liquid-reply.net/
       title: ArgoCD Web UI
   annotations:
     github.com/project-slug: argo/argo-cd
