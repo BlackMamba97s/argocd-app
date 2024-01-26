@@ -15,6 +15,6 @@ metadata:
     github.com/project-slug: argo/argo-cd
 spec:
   type: service
-  owner: user:default/guest
+  owner: 'user:default/guest'
   lifecycle: experimental
 
